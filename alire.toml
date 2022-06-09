@@ -14,6 +14,7 @@ tags = ["wordle", "terminal", "game"]
 [[depends-on]]
 aaa       = "~0.2.5"
 ansiada   = "^1.0.0"
+gnat      = ">=10 & <2000"  # GNAT 9 lacks some Random facilities
 wordlelib = "~0.1.0-dev"
 wordlist  = "~0.1.2"
 
@@ -24,7 +25,7 @@ wordlist  = "~0.1.2"
 '*'.Ada_Version = "GNAT_Extensions"
 
 [[pins]]
-# Development pins
+# Local development pins
 # aaa       = { path='../aaa' }
 # wordlist  = { path='../wordlist_ada' }
 # wordlelib = { path='../wordlelib_ada' }
