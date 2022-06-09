@@ -7,3 +7,10 @@ maintainers = ["asdf <alejandro@mosteo.com>"]
 maintainers-logins = ["mosteo"]
 
 executables = ["wordle"]
+
+[[depends-on]]
+wordlelib = "~0.1.0-dev"
+wordlist = "~0.1.0"
+
+[[pins]]
+wordlelib = { path='../wordlelib_ada' }
