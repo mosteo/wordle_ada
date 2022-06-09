@@ -28,3 +28,7 @@ wordlist  = "~0.1.2"
 # aaa       = { path='../aaa' }
 # wordlist  = { path='../wordlist_ada' }
 # wordlelib = { path='../wordlelib_ada' }
+
+# Pins for edition of the root crate only
+wordlelib = { url='git+https://github.com/mosteo/wordlelib_ada' }
+wordlist  = { url='git+https://github.com/mosteo/wordlist_ada' }
