@@ -15,7 +15,7 @@ tags = ["wordle", "terminal", "game"]
 aaa       = "~0.2.5"
 ansiada   = "^1.0.0"
 wordlelib = "~0.1.0-dev"
-wordlist  = "~0.1.0"
+wordlist  = "~0.1.2"
 
 [build-profiles]
 '*' = "validation"
