@@ -1,4 +1,4 @@
-# Object file
+.clang-format
 *.o
 
 # Ada Library Information

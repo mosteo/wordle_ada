@@ -1,6 +1,6 @@
 name = "wordle"
-description = "Shiny new project"
-version = "0.1.0-dev"
+description = "Wordle for the terminal"
+version = "0.1.0"
 
 authors = ["asdf"]
 maintainers = ["asdf <alejandro@mosteo.com>"]
@@ -8,9 +8,23 @@ maintainers-logins = ["mosteo"]
 
 executables = ["wordle"]
 
+licenses = "MIT"
+tags = ["wordle", "terminal", "game"]
+
 [[depends-on]]
+aaa       = "~0.2.5"
+ansiada   = "^1.0.0"
 wordlelib = "~0.1.0-dev"
-wordlist = "~0.1.0"
+wordlist  = "~0.1.0"
+
+[build-profiles]
+'*' = "validation"
+
+[build-switches]
+'*'.Ada_Version = "GNAT_Extensions"
 
 [[pins]]
-wordlelib = { path='../wordlelib_ada' }
+# Development pins
+# aaa       = { path='../aaa' }
+# wordlist  = { path='../wordlist_ada' }
+# wordlelib = { path='../wordlelib_ada' }
