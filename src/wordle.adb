@@ -1,6 +1,5 @@
 with AAA.Strings;
 
-with Ada.Numerics.Discrete_Random;
 with Ada.Text_IO; use Ada.Text_IO;
 
 with AnsiAda;
@@ -19,25 +18,8 @@ procedure Wordle is
    Candidates : constant Wordlist.Word_Vector :=
                   Wordlist.With_Length (Word_Length).To_Vector;
 
-   package Random is new Ada.Numerics.Discrete_Random (Positive);
-
-   Generator : Random.Generator;
-
-   function Force_Reset return Natural is
-   begin
-      Random.Reset (Generator);
-      return 0;
-   end Force_Reset;
-
-   Unused : constant Natural := Force_Reset;
-
-   Game : W.Game := W.New_Game
-     (AAA.Strings.To_Upper_Case
-        (Candidates
-           (Random.Random
-              (Generator,
-               First => 1,
-               Last  => Positive (Candidates.Length)))));
+   Game : W.Game :=
+            W.New_Game (AAA.Strings.To_Upper_Case (Candidates.Random_Word));
 
    ----------------
    -- User_Input --
