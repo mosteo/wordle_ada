@@ -12,10 +12,9 @@ licenses = "MIT"
 tags = ["wordle", "terminal", "game"]
 
 [[depends-on]]
-aaa       = "~0.2.5"
+aaa       = "~0.2.6"
 ansiada   = "^1.0.0"
-gnat      = ">=10 & <2000"  # GNAT 9 lacks some Random facilities
-wordlelib = "~0.1.0-dev"
+wordlelib = "~0.1.0"
 wordlist  = "~0.1.2"
 
 [build-profiles]
