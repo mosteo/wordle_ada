@@ -1,9 +1,27 @@
+# STEP 1: Fixing initial dependencies.
+# At this moment, you won't be able to build or edit the project, because there
+# are missing dependencies. Check below the [[depends-on]] entry, you will see
+# a dependency.
+#
+# TODO: Verify this from the command-line by running `alr with --solve`
+#
+# You should get a report where the missing libraries are labeled as such.
+#
+# This dependency isn't available in any index. It is only available in a
+# remote repository, so we will add it as a development "pin", as the first
+# step in the project
+#
+# TODO: add this dependency as a remote pin. You can do it in a single step
+# with the `alr with` command. Check its help, or the slides dealing with pins.
+# The syntax to use is : `alr with --use <url>`.
+# The location of the dependency is: https://github.com/mosteo/wordlelib_ada
+
 name = "wordle"
 description = "Wordle for the terminal"
 version = "0.1.0"
 
-authors = ["asdf"]
-maintainers = ["asdf <alejandro@mosteo.com>"]
+authors = ["Alejandro R. Mosteo"]
+maintainers = ["Alejandro R. Mosteo <alejandro@mosteo.com>"]
 maintainers-logins = ["mosteo"]
 
 executables = ["wordle"]
@@ -12,18 +30,10 @@ licenses = "MIT"
 tags = ["wordle", "terminal", "game"]
 
 [[depends-on]]
-aaa       = "~0.2.6"
-ansiada   = "^1.0.0"
 wordlelib = "~0.1.0"
-wordlist  = "~0.1.2"
 
 [build-profiles]
 '*' = "validation"
 
 [build-switches]
 '*'.Ada_Version = "GNAT_Extensions"
-
-[[pins]]
-# Local development pins
-wordlist  = { path='../wordlist_ada' }
-wordlelib = { path='../wordlelib_ada' }

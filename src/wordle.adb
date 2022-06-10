@@ -2,10 +2,10 @@ with AAA.Strings;
 
 with Ada.Text_IO; use Ada.Text_IO;
 
-with AnsiAda;
+--  with AnsiAda;
 
 with Wordlelib;
-with Wordlist;
+--  with Wordlist;
 
 procedure Wordle is
 
@@ -20,12 +20,13 @@ procedure Wordle is
 
    function Word_To_Guess return String is
    begin
-      return
-        AAA.Strings.To_Upper_Case
-          (Wordlist
-           .With_Length (Word_Length)
-           .To_Vector
-           .Random_Word);
+      --  return
+      --    AAA.Strings.To_Upper_Case
+      --      (Wordlist
+      --       .With_Length (Word_Length)
+      --       .To_Vector
+      --       .Random_Word);
+      return "QUICK";
    end Word_To_Guess;
 
    Game : W.Game := W.New_Game (Word_To_Guess);
@@ -50,11 +51,11 @@ procedure Wordle is
                          & Word_Length'Image & " characters");
             elsif Attempt not in W.Word then
                Put_Line ("That's not a valid input!");
-            elsif not Wordlist.With_Length (Word_Length).Contains
-              (AAA.Strings.To_Lower_Case (Attempt))
-            then
-               Put_Line ("I don't know that word, "
-                         & "I apologize about my ignorance...");
+            --  elsif not Wordlist.With_Length (Word_Length).Contains
+            --    (AAA.Strings.To_Lower_Case (Attempt))
+            --  then
+            --     Put_Line ("I don't know that word, "
+            --               & "I apologize about my ignorance...");
             else
                return Attempt;
             end if;
@@ -72,15 +73,25 @@ procedure Wordle is
       -- Print_Char --
       ----------------
 
+      --  procedure Print_Char (Char : Character; Kind : W.Guess_Kind) is
+      --     use AnsiAda;
+      --     use all type W.Guess_Kind;
+      --  begin
+      --     Put (AnsiAda.Wrap (Char & "", Bright,
+      --          Foreground (case Kind is
+      --                         when Hit        => Green,
+      --                         when Miss       => Grey,
+      --                         when Missplaced => Yellow)));
+      --  end Print_Char;
+
       procedure Print_Char (Char : Character; Kind : W.Guess_Kind) is
-         use AnsiAda;
          use all type W.Guess_Kind;
       begin
-         Put (AnsiAda.Wrap (Char & "", Bright,
-              Foreground (case Kind is
-                             when Hit        => Green,
-                             when Miss       => Grey,
-                             when Missplaced => Yellow)));
+         Put (Char & "");
+         Put (case Kind is
+                 when Hit => "* ",
+                 when Missplaced => "+ ",
+                 when Miss       => "  ");
       end Print_Char;
 
    begin
