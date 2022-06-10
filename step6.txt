@@ -1,0 +1,34 @@
+STEP 6: debug the wordlist crate and switch to the wordle wordlist.
+
+The wordlist crate uses the code generation configuration facilities of Alire.
+In this step we will use these to debug the crate and switch the wordlist.
+
+TODO: open the manifest of the wordlist crate, found at
+  ./wordlist_ada/alire/cache/pins/wordlist/alire.toml
+
+Observe the [configuration.variables] section, where two variables are defined.
+One of those is for logging, the other is to select the wordlist. You may also
+see step 7 at the end of this file, but **don't start with it yet**.
+
+TODO: enable logging of the crate. Todo so, edit the alire.toml **of the
+worle_ada** (that is, the one we have at the top of the working tree) to
+override the value of the Logging variable. To do so, add:
+
+[configuration.values]
+wordlist.Logging = true
+
+to the alire.toml of wordlist.
+
+TODO: build everything with `alr build` run in the wordle_ada folder.
+
+TODO: locate with your editor the `wordlist_config.ads` file, and verify that
+the Logging variable has the expected value. Check how the enum for the
+available wordlists is also there.
+
+TODO: `alr run` and observe a new message before the game starts, such as:
+
+    Loading words from /path/to/wordlist.json
+    Loaded 370105 words 
+
+TODO: continue in step 7, found at the end of the 'wordlist' crate manifest, at
+  ./wordlist_ada/alire/cache/pins/wordlist/alire.toml

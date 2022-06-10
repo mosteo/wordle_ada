@@ -26,3 +26,10 @@ will pin it in the way you're already familiar:
 
 TODO: pin the 'wordlist' crate, using the branch 'tutorial':
   alr pin wordlist --use https://github.com/mosteo/wordlist_ada --branch tutorial
+
+TODO: verify the pin by running `alr pin`. Observe how the tutorial branch is
+indicated, by contrast to the 'wordlelib' pin which tracks the default branch.
+
+TODO: reopen your editor to apply the new environment...
+
+TODO: continue with step 6 in file step6.txt of this repository.
