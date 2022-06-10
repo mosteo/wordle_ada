@@ -1,0 +1,28 @@
+STEP 5: in this step we will apply the random word selection, and we will
+inspect a few details of the 'wordlist' crate, and even do some modifications.
+
+TODO: Look for the "Word_To_Guess" procedure in wordlist.adb, near the top of
+the file (around line 40). You'll see that there is a few commented lines, and
+also the return with the predefined word. Uncomment the block that gets a
+random word. Inspect the spec at wordlist.ads is you feel curious about the
+offered API.
+
+TODO: `alr run` to verify that now you get a random word every time.
+
+The wordlist crate makes use of the resource sharing facilities in Alire. The
+list is not hardcoded in Ada sources, but is loaded at elaboration time from a
+toml file. By default, the "large.toml" file is loaded.
+
+TODO: locate the resource files of this crate navigating in the console or a
+file browser to the
+./wordle_ada/alire/cache/dependencies/wordlist.../share/wordlist
+folder. Take a peek at the file contents if you feel curious.
+
+A problem with this wordlist is that it includes many obscure words. In the
+next step we will see how to use the same wordlist in the original Wordle game.
+
+To do so, we are going to use a development version of the 'wordlist' crate. We
+will pin it in the way you're already familiar:
+
+TODO: pin the 'wordlist' crate, using the branch 'tutorial':
+  alr pin wordlist --use https://github.com/mosteo/wordlist_ada --branch tutorial
