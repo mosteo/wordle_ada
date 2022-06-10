@@ -15,6 +15,28 @@
 # with the `alr with` command. Check its help, or the slides dealing with pins.
 # The syntax to use is : `alr with --use <url>`.
 # The location of the dependency is: https://github.com/mosteo/wordlelib_ada
+#
+# When you add this pin, you'll get a report with **two** new dependencies.
+# Where is the second one coming from? There is a clue in the report itself.
+#
+# After adding the pin, check back the contents of this file. You should see a
+# new [[pins]] entry at the end. If for some reason the pinning didn't work
+# properly, you can remove the [[pins]] section and try again, or fix it by
+# hand and run `alr update`
+#
+# TODO: the project should build properly now. Do it with `alr build`
+# TODO: Also you can play already. Try it with `alr run`
+#
+# You will see an obvious limitation after a couple of games. We will fix this
+# in a later step.
+#
+# As you will have seen, the output format is monochrome and not very clear. We
+# will improve this output in the next step.
+#
+# TODO: edit your project. To use GNAT Studio, run `alr edit`. To use VSCode,
+# set up the environment in advance with `alr printenv`, and then launch the
+# editor from the terminal. The next STEP is detailed at the top of the
+# `wordle.adb` file, which is the main subprogram.
 
 name = "wordle"
 description = "Wordle for the terminal"
