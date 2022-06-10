@@ -1,3 +1,17 @@
+--  STEP 2: Enable the use of colors.
+--  There is an ANSI crate providing color sequences for most usual terminals.
+--  If you are on Windows 10, this should work too. Otherwise you can skip to
+--  step 4 at the bottom of this file.
+--
+--  TODO: add the 'ansiada' dependency. This crate is available normally in the
+--  community index, so you only need to 'alr with' it.
+--
+--  TODO: after adding it, you need to close and reopen your editor; otherwise
+--  the environment won't contain the new crate and the build will fail.
+--
+--  TODO: look for the "Print_Char" procedure below (around line 100). Continue
+--  with STEP 3 from there.
+
 with AAA.Strings;
 
 with Ada.Text_IO; use Ada.Text_IO;
@@ -72,7 +86,17 @@ procedure Wordle is
       ----------------
       -- Print_Char --
       ----------------
-
+      --
+      --  STEP 3: Uncomment the implementation below of the Print_Char
+      --  procedure, and comment the current implementation that isn't
+      --  using Ansiada.
+      --  TODO: also add/uncomment "with AnsiAda;" at the top of this file.
+      --  TODO: execute the game with the new implementation and verify colors
+      --    are now showing. This would be also a good time to inspect the spec
+      --    in wordlelib.ads if you're curious about how track of the game is
+      --    being kept.
+      --  TODO: continue with step 4 at the bottom of this file.
+      --
       --  procedure Print_Char (Char : Character; Kind : W.Guess_Kind) is
       --     use AnsiAda;
       --     use all type W.Guess_Kind;
