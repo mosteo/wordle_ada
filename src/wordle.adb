@@ -10,16 +10,27 @@ with Wordlist;
 procedure Wordle is
 
    Max_Attempts : constant := 6;
-
    Word_Length  : constant := 5;
 
    package W is new Wordlelib (Word_Length);
 
-   Candidates : constant Wordlist.Word_Vector :=
-                  Wordlist.With_Length (Word_Length).To_Vector;
+   -------------------
+   -- Word_To_Guess --
+   -------------------
 
-   Game : W.Game :=
-            W.New_Game (AAA.Strings.To_Upper_Case (Candidates.Random_Word));
+   function Word_To_Guess return String is
+   begin
+      return
+        AAA.Strings.To_Upper_Case
+          (Wordlist
+           .With_Length (Word_Length)
+           .To_Vector
+           .Random_Word);
+   end Word_To_Guess;
+
+   Game : W.Game := W.New_Game (Word_To_Guess);
+   --  This variable encapsulates the game progression. We need to pass as the
+   --  only argument the word to be guessed by the user.
 
    ----------------
    -- User_Input --
@@ -56,18 +67,25 @@ procedure Wordle is
    -----------
 
    procedure Print (Attempt : W.Word; Guess : W.Guess_Result) is
-      use AnsiAda;
-      use all type W.Guess_Kind;
+
+      ----------------
+      -- Print_Char --
+      ----------------
+
+      procedure Print_Char (Char : Character; Kind : W.Guess_Kind) is
+         use AnsiAda;
+         use all type W.Guess_Kind;
+      begin
+         Put (AnsiAda.Wrap (Char & "", Bright,
+              Foreground (case Kind is
+                             when Hit        => Green,
+                             when Miss       => Grey,
+                             when Missplaced => Yellow)));
+      end Print_Char;
+
    begin
       for I in Attempt'Range loop
-         case Guess (I) is
-            when Hit =>
-               Put (Wrap (Attempt (I) & "", Bright, Foreground (Green)));
-            when Miss =>
-               Put (Wrap (Attempt (I) & "", Default, Foreground (Grey)));
-            when Missplaced =>
-               Put (Wrap (Attempt (I) & "", Bright, Foreground (Yellow)));
-         end case;
+         Print_Char (Attempt (I), Guess (I));
       end loop;
       New_Line;
    end Print;
