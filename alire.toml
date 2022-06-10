@@ -25,6 +25,5 @@ wordlist  = "~0.1.2"
 
 [[pins]]
 # Local development pins
-# aaa       = { path='../aaa' }
-# wordlist  = { path='../wordlist_ada' }
-# wordlelib = { path='../wordlelib_ada' }
+wordlist  = { path='../wordlist_ada' }
+wordlelib = { path='../wordlelib_ada' }
