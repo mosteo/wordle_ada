@@ -2,6 +2,8 @@
 --  There is an ANSI crate providing color sequences for most usual terminals.
 --  If you are on Windows 10, this should work too. Otherwise you can skip to
 --  step 4 at the bottom of this file.
+--  More info: https://stackoverflow.com/questions/51680709/colored-text-output
+--             -in-powershell-console-using-ansi-vt100-codes
 --
 --  TODO: add the 'ansiada' dependency. This crate is available normally in the
 --  community index, so you only need to 'alr with' it.
@@ -147,3 +149,31 @@ begin
       Put_Line ("The word was: " & Game.Target);
    end if;
 end Wordle;
+
+--  STEP 4: using a random word.
+--  As you'll have noticed, we are now playing using always a predefined word.
+--  To fix this issue we are going to use a wordlist, which is available in the
+--  crate with the same name. We could simply pin it, but to spice things a bit
+--  up, we'll first use the indexed version in a personal index of mine.
+--
+--  TODO: verify "wordlist" is not yet available, running either
+--    alr show wordlist
+--    alr search --crates wordlist
+--
+--  TODO: add a new index, found at
+--    https://github.com/mosteo/alire-personal-index
+--  To do so, you can use the `alr index` command. Check its help, or the
+--- slides that explain how to use it. The syntax to use is
+--    alr index --add <url> --name <name>
+--  The name is arbitrary (e.g., you can use "personal" or "mosteo").
+--
+--  TODO: verify the index is properly added by running `alr index`
+--
+--  TODO: check that the "wordlist" crate is available now with
+--    alr show <crate name>
+--
+--  TODO: add the crate as a dependency with `alr with`. Don't forget to close
+--    and reopen the editor afterwards.
+--
+--  TODO: continue with step 5, found in file step5.txt at the root of the
+--    wordle_ada repository you're already working with.
