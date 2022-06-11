@@ -9,6 +9,9 @@ offered API.
 
 TODO: `alr run` to verify that now you get a random word every time.
 
+TODO: in "wordle.adb", in the procedure "User_Input", uncomment the few
+commented lines that check that the user-provided word does indeed exist.
+
 The wordlist crate makes use of the resource sharing facilities in Alire. The
 list is not hardcoded in Ada sources, but is loaded at elaboration time from a
 toml file. By default, the "large.toml" file is loaded.
