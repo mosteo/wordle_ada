@@ -11,13 +11,13 @@ One of those is for logging, the other is to select the wordlist. You may also
 see step 7 at the end of this file, but **don't start with it yet**.
 
 TODO: enable logging of the crate. Todo so, edit the alire.toml **of the
-worle_ada** (that is, the one we have at the top of the working tree) to
-override the value of the Logging variable. To do so, add:
+wordle_ada** folder (that is, the one we have at the top of the working tree)
+to override the value of the Logging variable. To do so, add:
 
 [configuration.values]
 wordlist.Logging = true
 
-to the alire.toml of wordlist.
+to the alire.toml at `wordle_ada/alire.toml`
 
 TODO: build everything with `alr build` run in the wordle_ada folder.
 
