@@ -1,7 +1,7 @@
 STEP 5: in this step we will apply the random word selection, and we will
 inspect a few details of the 'wordlist' crate, and even do some modifications.
 
-TODO: Look for the "Word_To_Guess" procedure in wordlist.adb, near the top of
+TODO: Look for the "Word_To_Guess" procedure in wordle.adb, near the top of
 the file (around line 40). You'll see that there is a few commented lines, and
 also the return with the predefined word. Uncomment the block that gets a
 random word. Inspect the spec at wordlist.ads is you feel curious about the
