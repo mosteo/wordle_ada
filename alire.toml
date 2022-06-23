@@ -17,9 +17,6 @@ ansiada   = "^1.0.0"
 wordlelib = "~0.1.0"
 wordlist  = "~0.1.2"
 
-[build-profiles]
-'*' = "validation"
-
 [build-switches]
 '*'.Ada_Version = "GNAT_Extensions"
 
