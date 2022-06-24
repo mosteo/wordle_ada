@@ -8,7 +8,8 @@ project Wordle is
    for Main use ("wordle.adb");
 
    package Compiler is
-      for Default_Switches ("Ada") use Wordle_Config.Ada_Compiler_Switches;
+      for Default_Switches ("Ada") use 
+        ("-gnatX") & Wordle_Config.Ada_Compiler_Switches;
    end Compiler;
 
    package Binder is
